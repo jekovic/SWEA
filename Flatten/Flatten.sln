@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flatten", "Flatten\Flatten.vcxproj", "{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Debug|x64.ActiveCfg = Debug|x64
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Debug|x64.Build.0 = Debug|x64
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Debug|x86.ActiveCfg = Debug|Win32
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Debug|x86.Build.0 = Debug|Win32
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Release|x64.ActiveCfg = Release|x64
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Release|x64.Build.0 = Release|x64
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Release|x86.ActiveCfg = Release|Win32
+		{A667AE9F-AFB9-4F5B-A46B-FB326A4FE84E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26A777C6-0539-40A0-A6FF-382E7A71CE78}
+	EndGlobalSection
+EndGlobal
