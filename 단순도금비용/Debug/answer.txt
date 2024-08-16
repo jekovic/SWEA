@@ -1,0 +1,117 @@
+	
+#define _CRT_SECURE_NO_WARNINGS
+ 
+#include<iostream>
+#include<stdio.h>
+#include<vector>
+ 
+using namespace std;
+ 
+int map[101][101];
+int ans_cnt, S, N, r, c;
+ 
+void patch(int row, int col, int size);
+int count_broken(int row, int col, int size);
+ 
+ 
+int main(int argc, char** argv)
+{
+    int test_case;
+    int T;  
+ 
+    //freopen("input_gild.txt", "r", stdin);
+    cin >> T;
+ 
+    for (test_case = 1; test_case <= T; ++test_case)
+    {
+        ans_cnt = 0;
+        cin >> S >> N;
+ 
+        for (int i=0 ; i<S ;i++)
+            for (int j = 0; j <= S; ++j )
+                map[i][j] = 0 ;
+ 
+        for (int i = 0; i < N; ++i) {
+            cin >> r >> c;
+            map[r][c] = 1;
+        }
+ 
+        vector< vector<int> >answers;
+ 
+        //3으로 덮기
+        for (int num = 9; num >= 5; num--) {
+ 
+            for (int x = 1; x <= S; x++) {
+                for (int y = 1; y <= S; y++) {
+                    if (count_broken(x, y, 3) == num) {
+                        ans_cnt++;
+                        patch(x, y, 3);
+                        answers.push_back({ x,y,3 });
+ 
+                    }
+                }
+            }
+        }
+ 
+ 
+        //2로 덮기
+        for (int num = 4; num >= 2; num--) {
+ 
+            for (int x = 1; x <= S; x++) {
+                for (int y = 1; y <= S; y++) {
+                    if (count_broken(x, y, 2) == num) {
+                        ans_cnt++;
+                        patch(x, y, 2);
+                        answers.push_back({ x,y,2 });
+ 
+                    }
+                }
+            }
+        }
+ 
+ 
+        //1로 덮기
+        for (int x = 1; x <= S; x++) {
+            for (int y = 1; y <= S; y++) {
+                if ( count_broken(x, y, 1) == 1) {
+                    ans_cnt++;
+                    patch(x, y, 1);
+                    answers.push_back({x,y,1});
+ 
+                }
+            }
+        }
+ 
+ 
+        cout << "#" << test_case << " " << ans_cnt ;
+        for (auto i : answers)
+            cout << " " << i[0] << " " << i[1] << " " << i[2];
+        cout << '\n';
+    }
+         
+    return 0;//정상종료시 반드시 0을 리턴해야합니다.
+ 
+}
+ 
+void patch(int row, int col, int size) {
+ 
+    for (int i = row; i < row + size; ++i) {
+        for (int j = col; j < col + size; ++j) {
+            if (map[i][j] == 1)
+                map[i][j] = 0;
+        }
+    }
+}
+ 
+ 
+int count_broken(int row, int col, int size) {
+    int res = 0;
+ 
+    for (int i = row; i < row + size; ++i) {
+        for (int j = col; j < col + size; ++j) {
+            if (map[i][j] == 1)
+                res++;
+        }
+    }
+    return res;
+}
